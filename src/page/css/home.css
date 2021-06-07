@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* category */
+
+.category {
+    margin: 10px;
+}
+.category .col-12{
+    border: 0.5px solid gray;
+    border-radius: 5px;
+    text-align: center;
+}
+.category .col-12 p{
+    background-color: rgba(255, 187, 0, 0.959);
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    border-radius: 5px 5px 0 0;
+}
+.category .col-12 img{
+    overflow: hidden;
+    transition-duration: 1s;
+
+}
+.category .col-12:hover {
+    border: 2px solid rgba(255, 187, 0, 0.959);
+    cursor: pointer;
+}
+.category .col-12:hover img{
+    transition-duration: 1s;
+}
+
+
+/* end category */
+
+/* woman fashion */
+
+.imageWoman {
+    text-align: center;
+}
+.imageWoman img {
+    width: 80%;
+
+}
+.womanFashion {
+    text-align: center;
+    background-color: white;
+    margin-right: 5px;
+}
+.womanFashion .col-12 {
+    border: 0.5px solid gray;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.womanFashion p {
+    height: 40px;
+    line-height: 40px;
+    font-size: 30px;
+}
+.womanFashion img {
+    height: 200px;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+.womanFashion img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+/* end woman fashion */
+
+.navCate {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.navCate .col{
+    margin: 5px;
+    border: 0.5px solid gray;
+}

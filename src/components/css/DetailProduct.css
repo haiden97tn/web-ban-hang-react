@@ -1,0 +1,22 @@
+.detailProduct{
+    margin-top: 5%;
+}
+.detailProduct .image {
+    border: 5px solid rgb(199, 199, 199);
+    text-align: center;
+    border-radius: 10px;
+}
+.detailProduct .image img{
+    width: 400px;
+    height: 400px;
+}
+.detailProduct .info {
+    padding-left: 10%;
+    padding-top: 2%;
+}
+.detailProduct .info h2{
+    color: blue;
+}
+.detailProduct .info h3{
+    color: red;
+}

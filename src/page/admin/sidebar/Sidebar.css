@@ -1,0 +1,9 @@
+.sideBarAdmin .nav-link{
+    font-size: larger;
+}
+.sideBarAdmin .nav-link:hover{
+    color: red;
+}
+.sideBarAdmin {
+    text-align: center;
+}

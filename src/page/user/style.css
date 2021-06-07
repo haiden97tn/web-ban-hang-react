@@ -1,0 +1,17 @@
+.formLogin{
+    text-align: center;
+    background-image: url("https://img.thuthuattinhoc.vn/uploads/2019/01/24/hinh-nen-mau-xanh-cute-dep-nhat_115835131.jpg");
+    background-size: 100% 100%;
+    height: 700px;
+}
+.formLogin form{
+    width: 400px;
+    height: auto;
+    display: inline-block;
+    padding: 3%;
+    border-radius: 20px;
+    background-color: white;
+}
+.formLogin form a{
+    color: blue;
+}
