@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const News = (props) => {
 
@@ -16,7 +17,9 @@ const News = (props) => {
                                         <img width="100%" src={x.image} alt="" />
                                     </div>
                                     <div className="col-9">
-                                        <h3>{x.title}</h3>
+                                        <Link to={`news/${x._id}`} className="text-decoration-none">
+                                            <h3>{x.title}</h3>
+                                        </Link>
                                         <p>{(x.content).slice(0, 200)} ...</p>
                                     </div>
                                 </div>
@@ -38,8 +41,8 @@ const News = (props) => {
                 </div>
             </div>
             <hr />
-            <div class="row">
-                <div class="col">
+            <div className="row">
+                <div className="col">
                     <img width="100%" src="https://www.vlance.vn/uploads/portfolio/view/f4a5cc5094bafd029e8d3b8f3e24ba08e8e8ffcd1.png" alt="" />
                 </div>
             </div>

@@ -25,7 +25,7 @@ const ListCategory = (props) => {
                         >Update</Link>
                         <button
                             data-id="${category._id}"
-                            className="btn btn-danger btn-remove"
+                            className="btn btn-danger btn-remove mx-3"
                             onClick={() => props.onRemoveCate(x._id)}
                         >Remove</button>
                     </div>

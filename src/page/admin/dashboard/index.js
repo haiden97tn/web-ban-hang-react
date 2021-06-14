@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Dashboard = () => {
+const Dashboard = (props) => {
+    console.log(props);
     return (
         <div>
             <main className="">
@@ -13,138 +14,48 @@ const Dashboard = () => {
                         </div>
                         <button type="button" className="btn btn-sm btn-outline-secondary dropdown-toggle">
                             <span data-feather="calendar" />
-        This week
-      </button>
+                            This week
+                        </button>
                     </div>
                 </div>
 
-                <h2>Bảng thống kê</h2>
-                <div className="table-responsive">
-                    <table className="table table-striped table-sm">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Header</th>
-                                <th>Header</th>
-                                <th>Header</th>
-                                <th>Header</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1,001</td>
-                                <td>random</td>
-                                <td>data</td>
-                                <td>placeholder</td>
-                                <td>text</td>
-                            </tr>
-                            <tr>
-                                <td>1,002</td>
-                                <td>placeholder</td>
-                                <td>irrelevant</td>
-                                <td>visual</td>
-                                <td>layout</td>
-                            </tr>
-                            <tr>
-                                <td>1,003</td>
-                                <td>data</td>
-                                <td>rich</td>
-                                <td>dashboard</td>
-                                <td>tabular</td>
-                            </tr>
-                            <tr>
-                                <td>1,003</td>
-                                <td>information</td>
-                                <td>placeholder</td>
-                                <td>illustrative</td>
-                                <td>data</td>
-                            </tr>
-                            <tr>
-                                <td>1,004</td>
-                                <td>text</td>
-                                <td>random</td>
-                                <td>layout</td>
-                                <td>dashboard</td>
-                            </tr>
-                            <tr>
-                                <td>1,005</td>
-                                <td>dashboard</td>
-                                <td>irrelevant</td>
-                                <td>text</td>
-                                <td>placeholder</td>
-                            </tr>
-                            <tr>
-                                <td>1,006</td>
-                                <td>dashboard</td>
-                                <td>illustrative</td>
-                                <td>rich</td>
-                                <td>data</td>
-                            </tr>
-                            <tr>
-                                <td>1,007</td>
-                                <td>placeholder</td>
-                                <td>tabular</td>
-                                <td>information</td>
-                                <td>irrelevant</td>
-                            </tr>
-                            <tr>
-                                <td>1,008</td>
-                                <td>random</td>
-                                <td>data</td>
-                                <td>placeholder</td>
-                                <td>text</td>
-                            </tr>
-                            <tr>
-                                <td>1,009</td>
-                                <td>placeholder</td>
-                                <td>irrelevant</td>
-                                <td>visual</td>
-                                <td>layout</td>
-                            </tr>
-                            <tr>
-                                <td>1,010</td>
-                                <td>data</td>
-                                <td>rich</td>
-                                <td>dashboard</td>
-                                <td>tabular</td>
-                            </tr>
-                            <tr>
-                                <td>1,011</td>
-                                <td>information</td>
-                                <td>placeholder</td>
-                                <td>illustrative</td>
-                                <td>data</td>
-                            </tr>
-                            <tr>
-                                <td>1,012</td>
-                                <td>text</td>
-                                <td>placeholder</td>
-                                <td>layout</td>
-                                <td>dashboard</td>
-                            </tr>
-                            <tr>
-                                <td>1,013</td>
-                                <td>dashboard</td>
-                                <td>irrelevant</td>
-                                <td>text</td>
-                                <td>visual</td>
-                            </tr>
-                            <tr>
-                                <td>1,014</td>
-                                <td>dashboard</td>
-                                <td>illustrative</td>
-                                <td>rich</td>
-                                <td>data</td>
-                            </tr>
-                            <tr>
-                                <td>1,015</td>
-                                <td>random</td>
-                                <td>tabular</td>
-                                <td>information</td>
-                                <td>text</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <h2 className="py-3 text-center">Bảng thống kê</h2>
+                <div className="table-responsive ">
+                    <div className="row py-5 ">
+                        <div className="col-3">
+                            <div className="col-12 rounded-3 text-center border border-danger">
+                                <h3 className="bg-danger py-4 text-white" >Total Page</h3>
+                                <p className="fs-1 text-danger py-5 fw-bold"  >5 </p>
+                            </div>
+                        </div>
+                        <div className="col-3">
+                            <div className="col-12 rounded-3 text-center border border-primary">
+                                <h3 className="bg-primary py-4 text-white" >Total Product</h3>
+                                <p className="fs-1 text-primary py-5 fw-bold"  >{props.products ? (props.products).length : ''} </p>
+                            </div>
+                        </div>
+                        <div className="col-3">
+                            <div className="col-12 rounded-3 text-center border border-warning">
+                                <h3 className="bg-warning py-4 text-white" >Total Category</h3>
+                                <p className="fs-1 text-warning py-5 fw-bold"  >{props.categories ? (props.categories).length : ''}</p>
+                            </div>
+                        </div>
+                        <div className="col-3">
+                            <div className="col-12 rounded-3 text-center border border-info">
+                                <h3 className="bg-info py-4 text-white" >Account</h3>
+                                <p className="fs-1 text-info py-5 fw-bold"  >7 </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div className="row py-1">
+                        <div className="col-3">
+                            <div className="col-12 rounded-3 text-center border border-success">
+                                <h3 className="bg-success py-4 text-white" >Total News</h3>
+                                <p className="fs-1 text-success py-5 fw-bold"  >{props.listNews ? (props.listNews).length : ''} </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </main>
 

@@ -33,7 +33,7 @@ const ListProducts = (props) => {
                         <div className="col-1">{product.status}</div>
                         <div className="col-3">
                             <Link to={`/admin/updateproduct/${product._id}`} className="btn btn-primary" >Update</Link>
-                            <button className="btn btn-danger btn-remove" data-id="{product._id}" onClick={() => props.onRemove(product._id)} >Remove</button>
+                            <button className="btn btn-danger btn-remove mx-3" data-id="{product._id}" onClick={() => props.onRemove(product._id)} >Remove</button>
                         </div>
                     </div>
                 })}

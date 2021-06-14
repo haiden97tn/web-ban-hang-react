@@ -1,21 +1,30 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import '../components/css/Header.css';
 import IconUser from '../image/icon-user.png';
 import IconCart from '../image/icon-cart.png';
 
 const Header = () => {
 
-    const [userInfo, setUserInfo] = useState('');
-    if (sessionStorage.getItem('user')) {
-        var user = JSON.parse(sessionStorage.getItem('user'));
-        console.log(user);
-        var userName = user.user.name;
+    var cart = localStorage.getItem('listcart') ? JSON.parse(localStorage.getItem('listcart')) : ''
+    const [listCart, setListCart] = useState(cart.length)
 
-    } else {
-        var userName = '';
-        console.log('Chua co user');
-    }
+
+    const [userInfo, setUserInfo] = useState('');
+    const [isLogin, setIsLogin] = useState(false);
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        if (sessionStorage.getItem('user')) {
+            var user = JSON.parse(sessionStorage.getItem('user'));
+            console.log(user);
+            setUserInfo(user.user.name)
+            // var userName = user.user.name;
+        } else {
+            setUserInfo('')
+            // var userName = '';
+        }
+    }, [pathname, isLogin])
 
 
 
@@ -51,18 +60,29 @@ const Header = () => {
                         <li className="text-center">
                             <Link className="nav-link text-dark" to="/profile">
                                 {
-                                    userName.slice(0, 7)
+                                    userInfo
                                 }
                             </Link>
                             <br />
                         </li>
                         <li >
                             <Link to="/signin" >
-                                <img src={IconUser} alt="" />
+                                <img src={IconUser} className="mx-3" />
                             </Link>
                         </li>
-                        <li >
-                            <img src={IconCart} alt="" />
+                        {/* <li >
+                            <Link to="/cart">
+                                <img src={IconCart} alt="" />
+                            </Link>
+                        </li> */}
+                        <li>
+                            <Link to="/cart" className="text-dark">
+                                <div id="ex4">
+                                    <span className="p1 fa-stack fa-2x has-badge" data-count={listCart}>
+                                        <i className="fa fa-shopping-cart fa-stack-1x xfa-inverse" data-count="4b" />
+                                    </span>
+                                </div>
+                            </Link>
                         </li>
 
                     </ul>

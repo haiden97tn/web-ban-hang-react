@@ -36,9 +36,6 @@ const CategoryAPI = {
             headers: { 'Authorization': 'Bearer ' + token }
         })
     },
-    // update(id, data) {
-    //     const url = `/category/${id}`;
-    //     return axiosClient.put(url, data)
-    // },
+
 }
 export default CategoryAPI;

@@ -12,6 +12,14 @@ const UserApi = {
     signout() {
         const url = `/signout`;
         return axiosClient.get(url);
-    }
+    },
+    getAll() {
+        const url = `/user`;
+        return axiosClient.get(url);
+    },
+    remove(id) {
+        const url = `/user/${id}`;
+        return axiosClient.delete(url);
+    },
 }
 export default UserApi;

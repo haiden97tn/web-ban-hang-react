@@ -26,6 +26,15 @@ import SignUp from "./page/user/SignUp";
 import SignIn from "./page/user/SignIn";
 import CatePage from "./components/CatePage";
 import Profile from "./page/user/Profile";
+import PrivateRoute from "./auth/privateRoute";
+import NewDetail from "./components/NewDetail";
+import Cart from "./page/cart/Cart";
+import CartAdmin from "./page/admin/cart/index";
+import CartDetail from "./page/admin/cart/DetailCart";
+import UserAdmin from "./page/admin/user/UserAdmin";
+import NewsAdmin from "./page/admin/news/index";
+import AddNew from "./page/admin/news/AddNew";
+import UpdateNew from "./page/admin/news/UpdateNew";
 
 const Routers = (props) => {
     return (
@@ -35,12 +44,13 @@ const Routers = (props) => {
                     <Route path="/admin/:path" >
                         <LayoutAdmin>
                             <Switch>
-                                <Route path="/admin/dashboard" >
+                                <PrivateRoute exact path="/admin/dashboard" >
+                                    <Dashboard {...props} />
+                                </PrivateRoute>
+
+                                {/* <Route path="/admin/dashboard" >
                                     <Dashboard />
-                                </Route>
-                                <Route path="/admin/user" >
-                                    User Manager
-                                </Route>
+                                </Route> */}
                                 <Route path='/admin/add'  >
                                     <AddTodoPage  {...props} />
                                 </Route>
@@ -64,6 +74,26 @@ const Routers = (props) => {
                                     {/* {Object.keys(props.detailCate).length > 0 ? <UpdateCateAdmin {...props} /> : ''} */}
                                     <UpdateCateAdmin {...props} />
                                 </Route>
+
+                                <Route exact path="/admin/cart" >
+                                    <CartAdmin />
+                                </Route>
+                                <Route exact path="/admin/cartdetail/:id" >
+                                    <CartDetail />
+                                </Route>
+
+                                <Route exact path="/admin/user">
+                                    <UserAdmin />
+                                </Route>
+                                <Route path="/admin/news">
+                                    <NewsAdmin />
+                                </Route>
+                                <Route path="/admin/addnew">
+                                    <AddNew />
+                                </Route>
+                                <Route path="/admin/updatenew/:id">
+                                    <UpdateNew />
+                                </Route>
                             </Switch>
                         </LayoutAdmin>
                     </Route>
@@ -85,8 +115,11 @@ const Routers = (props) => {
                                 <Route path="/category/:id" >
                                     <CatePage {...props} />
                                 </Route>
-                                <Route path='/news'>
+                                <Route exact path='/news'>
                                     <News {...props} />
+                                </Route>
+                                <Route exact path="/news/:id">
+                                    <NewDetail {...props} />
                                 </Route>
                                 <Route path="/contact" >
                                     <Contact />
@@ -97,7 +130,12 @@ const Routers = (props) => {
                                 <Route path="/signin" >
                                     <SignIn />
                                 </Route>
-                                <Route to="/profile">
+
+                                <Route path="/cart">
+                                    <Cart {...props} />
+                                </Route>
+
+                                <Route path="/profile">
                                     <Profile />
                                 </Route>
 

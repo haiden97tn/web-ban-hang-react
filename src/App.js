@@ -6,6 +6,7 @@ import Routers from './routers';
 import ProductApi from './api/ProductApi';
 import CategoryAPI from './api/CategoryAPI';
 import NewApi from './api/NewApi';
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -160,6 +161,10 @@ function App() {
     listNews();
   }, [])
   // end news 
+
+  //cart
+
+  // end cart 
 
   return (
     <div >
