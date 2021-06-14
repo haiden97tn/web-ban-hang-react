@@ -39,7 +39,8 @@ const Cart = () => {
             name: data.fullname,
             email: data.email,
             address: data.address,
-            products: listcart
+            products: listcart,
+            status: true
         }
         CartApi.add(body);
         alert('Bạn đã đặt hàng thành công')
