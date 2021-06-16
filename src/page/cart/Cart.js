@@ -6,7 +6,7 @@ import CartApi from '../../api/CartApi';
 import { useHistory } from "react-router-dom";
 
 
-const Cart = () => {
+const Cart = (props) => {
     let history = useHistory();
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const cart = localStorage.getItem('listcart') ? JSON.parse(localStorage.getItem('listcart')) : [];
@@ -17,11 +17,15 @@ const Cart = () => {
         });
         setListcart(newCart);
         localStorage.setItem('listcart', JSON.stringify(newCart))
+        props.onCountCart(newCart.length)
     }
+    //TInh tong tien
     var total = 0;
     for (var i = 0; i < listcart.length; i++) {
         total += (listcart[i].count * listcart[i].price)
     }
+
+
     const onChangeCout = (e) => {
         var count = e.target.value;
         var id = e.target.dataset.id;

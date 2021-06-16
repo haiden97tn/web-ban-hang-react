@@ -31,6 +31,7 @@ const ProductPage = (props) => {
             }
         }
         setListCart(newListCart);
+        props.onUpdateCart(newListCart.length)
         localStorage.setItem('listcart', JSON.stringify(newListCart))
     }
 
@@ -43,7 +44,7 @@ const ProductPage = (props) => {
                         {
                             props.categories.map((x, index) => {
                                 return <li className="list-group-item" key={index} >
-                                    <Link to={`category / ${x._id} `} className="text-decoration-none">{x.name}</Link>
+                                    <Link to={`category/${x._id}`} className="text-decoration-none">{x.name}</Link>
                                 </li>
                             })
                         }

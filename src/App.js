@@ -163,7 +163,14 @@ function App() {
   // end news 
 
   //cart
+  const [countCart, setCountCart] = useState(0);
+  const onUpdateCart = (data) => {
+    setCountCart(data)
+  }
 
+  const onCountCart = (data) => {
+    setCountCart(data)
+  }
   // end cart 
 
   return (
@@ -184,6 +191,11 @@ function App() {
         cateMens={cateMens}
 
         listNews={listNews}
+
+        onUpdateCart={onUpdateCart}
+        countCart={countCart}
+
+        onCountCart={onCountCart}
 
       ></Routers>
     </div>

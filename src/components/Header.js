@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../components/css/Header.css';
 import IconUser from '../image/icon-user.png';
-import IconCart from '../image/icon-cart.png';
 
-const Header = () => {
-
+const Header = (props) => {
+    console.log(props.countCart);
     var cart = localStorage.getItem('listcart') ? JSON.parse(localStorage.getItem('listcart')) : ''
     const [listCart, setListCart] = useState(cart.length)
 
@@ -78,7 +77,7 @@ const Header = () => {
                         <li>
                             <Link to="/cart" className="text-dark">
                                 <div id="ex4">
-                                    <span className="p1 fa-stack fa-2x has-badge" data-count={listCart}>
+                                    <span className="p1 fa-stack fa-2x has-badge" data-count={props.countCart}>
                                         <i className="fa fa-shopping-cart fa-stack-1x xfa-inverse" data-count="4b" />
                                     </span>
                                 </div>

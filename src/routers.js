@@ -35,6 +35,7 @@ import UserAdmin from "./page/admin/user/UserAdmin";
 import NewsAdmin from "./page/admin/news/index";
 import AddNew from "./page/admin/news/AddNew";
 import UpdateNew from "./page/admin/news/UpdateNew";
+import Header from "./components/Header";
 
 const Routers = (props) => {
     return (
@@ -98,7 +99,7 @@ const Routers = (props) => {
                         </LayoutAdmin>
                     </Route>
                     <Route>
-                        <LayoutWebsite>
+                        <LayoutWebsite {...props} >
                             <Switch>
                                 <Route exact path="/" >
                                     <HomePage {...props} />
@@ -137,6 +138,10 @@ const Routers = (props) => {
 
                                 <Route path="/profile">
                                     <Profile />
+                                </Route>
+
+                                <Route>
+                                    <Header {...props} />
                                 </Route>
 
                                 <Route path="*" >
